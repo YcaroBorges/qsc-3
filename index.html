@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quer Sair Comigo?</title>
+    <style>
+        body {
+            background-color: pink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            width: 100%;
+            padding: 20px;
+        }
+        h1 {
+            color: black;
+            font-size: 6vw; /* Escala bem em telas pequenas */
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex; /* Usar flex para alinhamento em linha */
+            justify-content: center; /* Centraliza os botões */
+            gap: 20px; /* Espaço entre os botões */
+        }
+        .button {
+            background-color: white;
+            border: 2px solid black;
+            color: black;
+            padding: 15px 25px; /* Aumentei o padding para melhorar o ajuste do texto */
+            font-size: 3.5vw; /* Diminuí a fonte dos botões */
+            cursor: pointer;
+            width: auto; /* Largura automática para acomodar o texto */
+            text-align: center; /* Centraliza o texto no botão */
+            box-sizing: border-box; /* Inclui o padding na largura total */
+            min-width: 100px; /* Largura mínima para os botões */
+        }
+        .button:hover {
+            background-color: #ddd;
+        }
+        #message {
+            display: none;
+            margin-top: 20px;
+            font-size: 4vw;
+            color: green;
+        }
+        #tiktok-button {
+            display: none;
+            margin-top: 20px;
+        }
+
+        /* Media queries para smartphones */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 8vw;
+            }
+            .button {
+                font-size: 4vw; /* Ajuste para telas menores */
+                padding: 15px; /* Mantém o padding consistente */
+                width: auto; /* Deixa a largura automática para telas menores */
+            }
+            #message {
+                font-size: 6vw;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>QUER SAIR COMIGO?</h1>
+    <div class="buttons">
+        <button class="button" id="sim">Sim</button>
+        <button class="button" id="nao">Não</button>
+    </div>
+    <div id="message">PARABÉNS, VOCÊ TERÁ O MELHOR ENCONTRO DA SUA VIDA!</div>
+    <!-- Botão para abrir o vídeo do TikTok -->
+    <a id="tiktok-button" href="https://www.tiktok.com/@yuriviniss/video/7389443583591402757" target="_blank">
+        <button class="button">Assistir Vídeo</button>
+    </a>
+</div>
+
+<script>
+    const btnSim = document.getElementById('sim');
+    const btnNao = document.getElementById('nao');
+    const message = document.getElementById('message');
+    const tiktokButton = document.getElementById('tiktok-button');
+
+    btnSim.addEventListener('click', () => {
+        message.style.display = 'block';
+        tiktokButton.style.display = 'block'; // Mostra o botão para assistir o vídeo
+    });
+
+    btnNao.addEventListener('mouseover', () => {
+        const x = Math.random() * (window.innerWidth - btnNao.offsetWidth);
+        const y = Math.random() * (window.innerHeight - btnNao.offsetHeight);
+        btnNao.style.position = 'absolute'; // Mantém a posição apenas durante o movimento
+        btnNao.style.left = `${x}px`;
+        btnNao.style.top = `${y}px`;
+    });
+</script>
+
+</body>
+</html>
