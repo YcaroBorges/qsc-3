@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quer Sair Comigo?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: pink;
@@ -12,16 +13,30 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
         }
         .container {
-            text-align: center;
             width: 100%;
             padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background-color: white; /* Fundo branco para destacar o conteúdo */
         }
         h1 {
             color: black;
             font-size: 6vw; /* Escala bem em telas pequenas */
+            margin-bottom: 20px;
+        }
+        .image-box {
+            margin: 20px 0; /* Margem para espaçamento */
+            padding: 10px;
+            border: 2px solid #ccc; /* Borda clara */
+            border-radius: 10px; /* Bordas arredondadas */
+            background-color: #f9f9f9; /* Fundo leve para a caixa de imagem */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .buttons {
             margin-top: 20px;
@@ -30,7 +45,7 @@
             gap: 20px; /* Espaço entre os botões */
         }
         .button {
-            background-color: white;
+            background-color: #f0f0f0; /* Fundo levemente cinza */
             border: 2px solid black;
             color: black;
             padding: 15px 25px; /* Aumentei o padding para melhorar o ajuste do texto */
@@ -40,6 +55,8 @@
             text-align: center; /* Centraliza o texto no botão */
             box-sizing: border-box; /* Inclui o padding na largura total */
             min-width: 100px; /* Largura mínima para os botões */
+            border-radius: 5px; /* Bordas arredondadas para os botões */
+            transition: background-color 0.3s; /* Transição suave para o hover */
         }
         .button:hover {
             background-color: #ddd;
@@ -49,12 +66,12 @@
             margin-top: 20px;
             font-size: 4vw;
             color: green;
+            font-weight: bold;
         }
         #tiktok-button {
             display: none;
             margin-top: 20px;
         }
-
         /* Media queries para smartphones */
         @media (max-width: 600px) {
             h1 {
@@ -75,13 +92,20 @@
 
 <div class="container">
     <h1>QUER SAIR COMIGO?</h1>
+
+    <!-- Caixa para adicionar a imagem -->
+    <div class="image-box">
+        <!-- Aqui você pode adicionar a imagem -->
+        <img src="ycaro.JPEG" alt="Descrição da Imagem" style="max-width: 100%; border-radius: 8px;">
+    </div>
+
     <div class="buttons">
         <button class="button" id="sim">Sim</button>
         <button class="button" id="nao">Não</button>
     </div>
     <div id="message">PARABÉNS, VOCÊ TERÁ O MELHOR ENCONTRO DA SUA VIDA!</div>
     <!-- Botão para abrir o vídeo do TikTok -->
-    <a id="tiktok-button" href="https://www.tiktok.com/@yuriviniss/video/7389443583591402757" target="_blank">
+    <a id="tiktok-button" href="https://www.tiktok.com/@patolinoarmando/video/7084737853841804549" target="_blank">
         <button class="button">Assistir Vídeo</button>
     </a>
 </div>
