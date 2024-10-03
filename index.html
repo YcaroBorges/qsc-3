@@ -27,9 +27,9 @@
         h1 {
             color: #d6336c;
             font-family: 'Playfair Display', serif;
-            font-size: 3.8vw; /* Fonte ajustada para não ficar muito grande */
+            font-size: 3.8vw;
             margin-bottom: 20px;
-            line-height: 1.2; /* Melhora a legibilidade para textos maiores */
+            line-height: 1.2;
         }
         .image-box {
             margin: 20px 0;
@@ -42,7 +42,7 @@
             align-items: center;
         }
         .image-box img {
-            max-width: 80%; /* Reduz o tamanho da imagem para 80% da largura disponível */
+            max-width: 80%;
             border-radius: 8px;
         }
         .buttons {
@@ -63,7 +63,7 @@
         }
         .button:hover {
             background-color: #ff4b5c;
-            transform: scale(1.1); /* Efeito de hover */
+            transform: scale(1.1);
             box-shadow: 0px 8px 15px rgba(255, 75, 92, 0.5);
         }
         #message {
@@ -74,14 +74,25 @@
             font-weight: bold;
             font-family: 'Playfair Display', serif;
         }
-        #tiktok-button {
+        #tiktok-button, #whatsapp-button {
             display: none;
             margin-top: 20px;
+        }
+        .extra-option {
+            margin-top: 20px;
+        }
+        #toggle-whatsapp {
+            background-color: transparent;
+            border: none;
+            font-size: 1.2rem;
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: underline;
         }
         /* Media queries para smartphones */
         @media (max-width: 600px) {
             h1 {
-                font-size: 6vw; /* Fonte menor em smartphones */
+                font-size: 6vw;
             }
             .button {
                 font-size: 4vw;
@@ -106,10 +117,18 @@
         <button class="button" id="sim">Sim</button>
         <button class="button" id="nao">Não</button>
     </div>
-    <div id="message">PARABÉNS,AGORA É SO CLICAR NO BOTÃO ABAIXO!!!</div>
+    <div id="message">PARABÉNS, AGORA SÓ CLICAR NO VIDEO ABAIXO KKK</div>
     <a id="tiktok-button" href="https://www.tiktok.com/@patolinoarmando/video/7084737853841804549" target="_blank">
         <button class="button">Assistir Vídeo</button>
     </a>
+
+    <!-- Opção "Caso mude de ideia" -->
+    <div class="extra-option">
+        <button id="toggle-whatsapp">Caso mude de ideia</button>
+        <a id="whatsapp-button" href="https://api.whatsapp.com/send?phone=+5511963958437&text=oii%2C%20pensei%20melhor%20kkk" target="_blank">
+            <button class="button" id="toque-aqui">Toque aqui</button>
+        </a>
+    </div>
 </div>
 
 <script>
@@ -117,6 +136,8 @@
     const btnNao = document.getElementById('nao');
     const message = document.getElementById('message');
     const tiktokButton = document.getElementById('tiktok-button');
+    const toggleWhatsapp = document.getElementById('toggle-whatsapp');
+    const whatsappButton = document.getElementById('whatsapp-button');
 
     btnSim.addEventListener('click', () => {
         message.style.display = 'block';
@@ -126,9 +147,14 @@
     btnNao.addEventListener('mouseover', () => {
         const x = Math.random() * (window.innerWidth - btnNao.offsetWidth);
         const y = Math.random() * (window.innerHeight - btnNao.offsetHeight);
-        btnNao.style.position = 'absolute'; // Mantém a posição apenas durante o movimento
+        btnNao.style.position = 'absolute';
         btnNao.style.left = `${x}px`;
         btnNao.style.top = `${y}px`;
+    });
+
+    // Mostra o botão do WhatsApp quando "Caso mude de ideia" for clicado
+    toggleWhatsapp.addEventListener('click', () => {
+        whatsappButton.style.display = 'block';
     });
 </script>
 
