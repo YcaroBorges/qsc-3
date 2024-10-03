@@ -3,70 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUPER SECRETO</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Quer Sair Comigo?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: pink;
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0); /* Degradê romântico */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto', sans-serif;
             text-align: center;
         }
         .container {
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
             width: 100%;
-            padding: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            background-color: white; /* Fundo branco para destacar o conteúdo */
+            max-width: 500px;
         }
         h1 {
-            color: black;
-            font-size: 6vw; /* Escala bem em telas pequenas */
+            color: #d6336c;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8vw; /* Fonte ajustada para não ficar muito grande */
             margin-bottom: 20px;
+            line-height: 1.2; /* Melhora a legibilidade para textos maiores */
         }
         .image-box {
-            margin: 20px 0; /* Margem para espaçamento */
+            margin: 20px 0;
             padding: 10px;
-            border: 2px solid #ccc; /* Borda clara */
-            border-radius: 10px; /* Bordas arredondadas */
-            background-color: #f9f9f9; /* Fundo leve para a caixa de imagem */
+            border: 2px solid #f7c6d4;
+            border-radius: 10px;
+            background-color: #fff6f8;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         .buttons {
             margin-top: 20px;
-            display: flex; /* Usar flex para alinhamento em linha */
-            justify-content: center; /* Centraliza os botões */
-            gap: 20px; /* Espaço entre os botões */
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
         .button {
-            background-color: #f0f0f0; /* Fundo levemente cinza */
-            border: 2px solid black;
-            color: black;
-            padding: 15px 25px; /* Aumentei o padding para melhorar o ajuste do texto */
-            font-size: 3.5vw; /* Diminuí a fonte dos botões */
+            background-color: #ff6f91;
+            border: 2px solid #ff4b5c;
+            color: #fff;
+            padding: 15px 25px;
+            font-size: 1.5rem;
             cursor: pointer;
-            width: auto; /* Largura automática para acomodar o texto */
-            text-align: center; /* Centraliza o texto no botão */
-            box-sizing: border-box; /* Inclui o padding na largura total */
-            min-width: 100px; /* Largura mínima para os botões */
-            border-radius: 5px; /* Bordas arredondadas para os botões */
-            transition: background-color 0.3s; /* Transição suave para o hover */
+            border-radius: 10px;
+            transition: all 0.3s ease;
         }
         .button:hover {
-            background-color: #ddd;
+            background-color: #ff4b5c;
+            transform: scale(1.1); /* Efeito de hover */
+            box-shadow: 0px 8px 15px rgba(255, 75, 92, 0.5);
         }
         #message {
             display: none;
             margin-top: 20px;
-            font-size: 4vw;
-            color: green;
+            font-size: 1.8rem;
+            color: #28a745;
             font-weight: bold;
+            font-family: 'Playfair Display', serif;
         }
         #tiktok-button {
             display: none;
@@ -75,12 +77,10 @@
         /* Media queries para smartphones */
         @media (max-width: 600px) {
             h1 {
-                font-size: 8vw;
+                font-size: 6vw; /* Fonte menor em smartphones */
             }
             .button {
-                font-size: 4vw; /* Ajuste para telas menores */
-                padding: 15px; /* Mantém o padding consistente */
-                width: auto; /* Deixa a largura automática para telas menores */
+                font-size: 4vw;
             }
             #message {
                 font-size: 6vw;
@@ -95,16 +95,14 @@
 
     <!-- Caixa para adicionar a imagem -->
     <div class="image-box">
-        <!-- Aqui você pode adicionar a imagem -->
-        <img src="LELE.JPG.JPEG" alt="Descrição da Imagem" style="max-width: 100%; border-radius: 8px;">
+        <img src="URL_DA_IMAGEM_AQUI" alt="Descrição da Imagem" style="max-width: 100%; border-radius: 8px;">
     </div>
 
     <div class="buttons">
         <button class="button" id="sim">Sim</button>
         <button class="button" id="nao">Não</button>
     </div>
-    <div id="message">PARABÉNS, SO CLICAR NO VIDEO ABAIXO</div>
-    <!-- Botão para abrir o vídeo do TikTok -->
+    <div id="message">PARABÉNS, VOCÊ TERÁ O MELHOR ENCONTRO DA SUA VIDA!</div>
     <a id="tiktok-button" href="https://www.tiktok.com/@patolinoarmando/video/7084737853841804549" target="_blank">
         <button class="button">Assistir Vídeo</button>
     </a>
