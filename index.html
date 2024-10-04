@@ -74,7 +74,7 @@
             font-weight: bold;
             font-family: 'Playfair Display', serif;
         }
-        #tiktok-button, #whatsapp-button {
+        #tiktok-button, #whatsapp-button, #friend-help-button {
             display: none;
             margin-top: 20px;
         }
@@ -117,15 +117,23 @@
         <button class="button" id="sim">Sim</button>
         <button class="button" id="nao">Não</button>
     </div>
-    <div id="message">PARABÉNS, AGORA SÓ CLICAR NO VIDEO ABAIXO KKK</div>
+    <div id="message">PARABÉNS, SÓ CLICAR NO VIDEO ABAIXO!!!</div>
     <a id="tiktok-button" href="https://www.tiktok.com/@patolinoarmando/video/7084737853841804549" target="_blank">
         <button class="button">Assistir Vídeo</button>
     </a>
 
+    <!-- Botão "Ajuda de um amigo" -->
+    <div class="extra-option">
+        <button class="button" id="friend-help">Ajuda de um amigo (caso queira)</button>
+        <a id="friend-help-button" href="https://www.tiktok.com/@fredelboni/video/7161600779759963397" target="_blank">
+            <button class="button" id="toque-aqui-amigo">Toque aqui</button>
+        </a>
+    </div>
+
     <!-- Opção "Caso mude de ideia" -->
     <div class="extra-option">
-        <button id="toggle-whatsapp">Caso mude de ideia</button>
-        <a id="whatsapp-button" href="https://api.whatsapp.com/send?phone=+5511963958437&text=oii%2C%20pensei%20melhor%20kkk" target="_blank">
+        <button id="toggle-whatsapp">Caso algum dia mude de ideia</button>
+        <a id="whatsapp-button" href="https://api.whatsapp.com/send?phone=+5511963958437&text=oiii" target="_blank">
             <button class="button" id="toque-aqui">Toque aqui</button>
         </a>
     </div>
@@ -138,6 +146,8 @@
     const tiktokButton = document.getElementById('tiktok-button');
     const toggleWhatsapp = document.getElementById('toggle-whatsapp');
     const whatsappButton = document.getElementById('whatsapp-button');
+    const friendHelp = document.getElementById('friend-help');
+    const friendHelpButton = document.getElementById('friend-help-button');
 
     btnSim.addEventListener('click', () => {
         message.style.display = 'block';
@@ -155,6 +165,11 @@
     // Mostra o botão do WhatsApp quando "Caso mude de ideia" for clicado
     toggleWhatsapp.addEventListener('click', () => {
         whatsappButton.style.display = 'block';
+    });
+
+    // Mostra o botão de "Ajuda de um amigo" ao clicar
+    friendHelp.addEventListener('click', () => {
+        friendHelpButton.style.display = 'block';
     });
 </script>
 
