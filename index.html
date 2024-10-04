@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quer Sair Comigo?</title>
+    <title>super secreto</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
     <style>
         body {
@@ -55,8 +55,8 @@
             background-color: #ff6f91;
             border: 2px solid #ff4b5c;
             color: #fff;
-            padding: 15px 25px;
-            font-size: 1.5rem;
+            padding: 10px 20px;
+            font-size: 1rem;
             cursor: pointer;
             border-radius: 10px;
             transition: all 0.3s ease;
@@ -74,7 +74,7 @@
             font-weight: bold;
             font-family: 'Playfair Display', serif;
         }
-        #tiktok-button, #whatsapp-button, #friend-help-button {
+        #tiktok-button, #whatsapp-button, #friend-help-button, #persistence-button {
             display: none;
             margin-top: 20px;
         }
@@ -95,10 +95,11 @@
                 font-size: 6vw;
             }
             .button {
-                font-size: 4vw;
+                font-size: 3.5vw;
+                padding: 12px 20px;
             }
             #message {
-                font-size: 6vw;
+                font-size: 5vw;
             }
         }
     </style>
@@ -117,23 +118,31 @@
         <button class="button" id="sim">Sim</button>
         <button class="button" id="nao">Não</button>
     </div>
-    <div id="message">PARABÉNS, SÓ CLICAR NO VIDEO ABAIXO!!!</div>
+    <div id="message">PARABÉNS, Agora é so clicar no video abaixo!!</div>
     <a id="tiktok-button" href="https://www.tiktok.com/@patolinoarmando/video/7084737853841804549" target="_blank">
         <button class="button">Assistir Vídeo</button>
     </a>
 
     <!-- Botão "Ajuda de um amigo" -->
     <div class="extra-option">
-        <button class="button" id="friend-help">Ajuda de um amigo (caso queira)</button>
+        <button class="button" id="friend-help">Se precisar</button>
         <a id="friend-help-button" href="https://www.tiktok.com/@fredelboni/video/7161600779759963397" target="_blank">
-            <button class="button" id="toque-aqui-amigo">Toque aqui</button>
+            <button class="button" id="toque-aqui-amigo">Ajuda de um amigo</button>
+        </a>
+    </div>
+
+    <!-- Novo botão "Por que você não desiste?" -->
+    <div class="extra-option">
+        <button class="button" id="persistence">Agora você deve estar se perguntando, "mas por que você não desiste nunca e é tão doido?"</button>
+        <a id="persistence-button" href="https://www.tiktok.com/@dunastourx/photo/7403551708191657222" target="_blank">
+            <button class="button" id="toque-aqui-persistence">Por isso</button>
         </a>
     </div>
 
     <!-- Opção "Caso mude de ideia" -->
     <div class="extra-option">
-        <button id="toggle-whatsapp">Caso algum dia mude de ideia</button>
-        <a id="whatsapp-button" href="https://api.whatsapp.com/send?phone=+5511963958437&text=oiii" target="_blank">
+        <button id="toggle-whatsapp">Caso mude de ideia</button>
+        <a id="whatsapp-button" href="https://api.whatsapp.com/send?phone=+5511963958437&text=oii" target="_blank">
             <button class="button" id="toque-aqui">Toque aqui</button>
         </a>
     </div>
@@ -148,6 +157,8 @@
     const whatsappButton = document.getElementById('whatsapp-button');
     const friendHelp = document.getElementById('friend-help');
     const friendHelpButton = document.getElementById('friend-help-button');
+    const persistence = document.getElementById('persistence');
+    const persistenceButton = document.getElementById('persistence-button');
 
     btnSim.addEventListener('click', () => {
         message.style.display = 'block';
@@ -170,6 +181,11 @@
     // Mostra o botão de "Ajuda de um amigo" ao clicar
     friendHelp.addEventListener('click', () => {
         friendHelpButton.style.display = 'block';
+    });
+
+    // Mostra o botão de "Por que você não desiste?" ao clicar
+    persistence.addEventListener('click', () => {
+        persistenceButton.style.display = 'block';
     });
 </script>
 
