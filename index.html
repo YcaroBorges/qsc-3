@@ -3,134 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SITE DA BEBÊ</title>
+    <title>Convite</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
     <style>
-        /* Estilos principais */
         body {
             background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            font-family: 'Roboto', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: 'Roboto', sans-serif;
             text-align: center;
         }
         .container {
             background-color: #fff;
             padding: 30px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             border-radius: 15px;
-            width: 100%;
-            max-width: 500px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
         }
         h1 {
+            font-size: 2rem;
             color: #d6336c;
             font-family: 'Playfair Display', serif;
-            font-size: 3.8vw;
             margin-bottom: 20px;
-            line-height: 1.2;
         }
-        .button, .agenda-button {
+        .button-group {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .button {
             background-color: #ff6f91;
             border: 2px solid #ff4b5c;
-            color: #fff;
+            color: white;
             padding: 10px 20px;
             font-size: 1rem;
             cursor: pointer;
             border-radius: 10px;
             transition: all 0.3s ease;
-            margin: 10px 5px;
-            display: inline-block;
+            width: 45%;
         }
-        .button:hover, .agenda-button:hover {
+        .button:hover {
             background-color: #ff4b5c;
             transform: scale(1.1);
             box-shadow: 0px 8px 15px rgba(255, 75, 92, 0.5);
         }
-        .hidden-content, .hidden-content2, .hidden-content3 {
-            display: none;
-            color: #333;
+        #noButton {
+            position: relative;
+        }
+        .extra-button {
+            display: block;
             margin-top: 20px;
+            background-color: #87ceeb;
         }
-        .image-box {
-            width: 100%;
-            margin: 20px 0;
+        .hidden-button {
+            display: none;
+            margin-top: 10px;
+            background-color: #ff6f91;
         }
-        .image-box img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 15px;
-        }
-        .additional-buttons {
-            margin-top: 15px;
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            .button {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <!-- Título -->
-    <h1>ESSA LINDA MOÇA ACEITA UMA PERGUNTA SECRETA?</h1>
-
-    <!-- Caixa de imagem -->
-    <div class="image-box">
-        <!-- Adicione sua imagem aqui -->
-        <img src="LELE.JPG.JPEG" alt="Imagem da pergunta secreta">
-    </div>
-
-    <!-- Botões de resposta -->
-    <button class="button" onclick="showMessage()">Sim</button>
-    <button class="button" id="noButton" onmouseover="moveButton()">Não</button>
-
-    <!-- Mensagem de confirmação -->
-    <div class="hidden-content" id="confirmMessage">
-        <p>PARABÉNS, VOCÊ TERÁ O MELHOR ENCONTRO DA SUA VIDA!</p>
-        <!-- Vídeo do TikTok -->
-        <iframe src="https://www.tiktok.com/embed/7068802180480002054" frameborder="0" width="300" height="500" allowfullscreen></iframe>
-    </div>
-
-    <!-- Botão adicional separado -->
-    <div class="additional-buttons">
-        <button class="button" onclick="showContent2()">Ajuda de um amigo (caso queira)</button>
-        <div class="hidden-content2" id="friendHelp">
-            <a href="https://www.tiktok.com/@fredelboni/video/7161600779759963397" target="_blank" class="button">Toque aqui</a>
+    <div class="container">
+        <h1>Essa linda moça aceita uma pergunta secreta?</h1>
+        <div class="button-group">
+            <button class="button" id="yesButton">Sim</button>
+            <button class="button" id="noButton">Não</button>
         </div>
+        <button class="extra-button" id="friendHelpButton">Ajuda de um amigo (caso queira)</button>
+        <button class="extra-button" id="maybeButton">Caso mude de ideia</button>
     </div>
 
-    <div class="additional-buttons">
-        <button class="button" onclick="showContent3()">Agora você deve estar se perguntando, "mas por que você não desiste nunca e é tão doido?"</button>
-        <div class="hidden-content3" id="reason">
-            <a href="https://www.tiktok.com/@dunastourx/photo/7403551708191657222" target="_blank" class="button">Toque aqui</a>
-        </div>
-    </div>
+    <script>
+        document.getElementById("noButton").addEventListener("mouseover", function() {
+            const x = Math.floor(Math.random() * 200) - 100;
+            const y = Math.floor(Math.random() * 200) - 100;
+            this.style.transform = `translate(${x}px, ${y}px)`;
+        });
 
-    <!-- Novo botão para agenda -->
-    <button class="agenda-button" onclick="window.open('agenda.html', '_blank')">Agenda</button>
+        document.getElementById("yesButton").addEventListener("click", function() {
+            alert("PARABÉNS! VOCÊ TERÁ O MELHOR ENCONTRO DA SUA VIDA!");
+        });
 
-</div>
+        document.getElementById("friendHelpButton").addEventListener("click", function() {
+            window.open("https://www.tiktok.com/@fredelboni/video/7161600779759963397", "_blank");
+        });
 
-<script>
-    function showMessage() {
-        document.getElementById("confirmMessage").style.display = "block";
-    }
-
-    function moveButton() {
-        const button = document.getElementById("noButton");
-        button.style.position = "absolute";
-        button.style.top = `${Math.random() * (window.innerHeight - button.offsetHeight)}px`;
-        button.style.left = `${Math.random() * (window.innerWidth - button.offsetWidth)}px`;
-    }
-
-    function showContent2() {
-        document.getElementById("friendHelp").style.display = "block";
-    }
-
-    function showContent3() {
-        document.getElementById("reason").style.display = "block";
-    }
-</script>
-
+        document.getElementById("maybeButton").addEventListener("click", function() {
+            alert("Toque aqui e fale no WhatsApp");
+            window.open("https://wa.me/11966958437?text=oii,%20pensei%20melhor%20kkk", "_blank");
+        });
+    </script>
 </body>
 </html>
