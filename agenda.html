@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
     <style>
-        /* Estilos principais */
         body {
             background: linear-gradient(135deg, #ffafbd, #ffc3a0);
             display: flex;
@@ -23,19 +21,17 @@
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
             border-radius: 15px;
             width: 100%;
-            max-width: 500px;
+            max-width: 400px;
         }
         h1 {
+            font-size: 1.8rem;
             color: #d6336c;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
             margin-bottom: 20px;
-            line-height: 1.2;
         }
         label {
             display: block;
             margin-top: 15px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #333;
         }
         input[type="date"], input[type="time"] {
@@ -63,43 +59,40 @@
             transform: scale(1.1);
             box-shadow: 0px 8px 15px rgba(255, 75, 92, 0.5);
         }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            .submit-button, .back-button {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
-
 <div class="container">
     <h1>Escolha sua data e horário</h1>
-
-    <form onsubmit="sendEmail(event)">
-        <!-- Seleção de data -->
+    <form onsubmit="sendWhatsApp(event)">
         <label for="date">Data:</label>
         <input type="date" id="date" required>
-
-        <!-- Seleção de horário -->
         <label for="time">Horário:</label>
         <input type="time" id="time" required>
-
-        <!-- Botão de envio -->
         <button type="submit" class="submit-button">Enviar</button>
     </form>
-
-    <!-- Botão de voltar para a página principal -->
-    <button class="back-button" onclick="window.close()">Voltar</button>
+    <button class="back-button" onclick="window.location.href='index.html'">Voltar</button>
 </div>
 
 <script>
-    function sendEmail(event) {
-        event.preventDefault(); // Impede o envio padrão do formulário
+    function sendWhatsApp(event) {
+        event.preventDefault();
 
         const date = document.getElementById('date').value;
         const time = document.getElementById('time').value;
 
-        const subject = encodeURIComponent("Escolha de data para o encontro");
-        const body = encodeURIComponent(`Eu escolho a data ${date} e o horário ${time} para ter o melhor encontro da minha vida! :)`);
-        const email = "seu-email@exemplo.com"; // Substitua pelo seu endereço de e-mail
+        const message = encodeURIComponent(`Eu escolho a data ${date} e o horário ${time} para ter o melhor encontro da minha vida! :)`);
+        const phone = "11963958437";
 
-        // Abre o cliente de e-mail padrão com os dados preenchidos
-        window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+        window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
     }
 </script>
 
