@@ -3,108 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convite</title>
+    <title>SITE DA LELÊ?</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
-            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0); /* Degradê romântico */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            font-family: 'Roboto', sans-serif;
             text-align: center;
         }
         .container {
             background-color: #fff;
             padding: 30px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
             border-radius: 15px;
-            width: 90%;
-            max-width: 400px;
-            text-align: center;
+            width: 100%;
+            max-width: 500px;
         }
         h1 {
-            font-size: 2rem;
             color: #d6336c;
             font-family: 'Playfair Display', serif;
+            font-size: 3.8vw;
             margin-bottom: 20px;
+            line-height: 1.2;
         }
-        .button-group {
-            display: flex;
-            justify-content: space-around;
+        .image-box {
             margin: 20px 0;
+            padding: 10px;
+            border: 2px solid #f7c6d4;
+            border-radius: 10px;
+            background-color: #fff6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-box img {
+            max-width: 80%;
+            border-radius: 8px;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
         .button {
             background-color: #ff6f91;
             border: 2px solid #ff4b5c;
-            color: white;
+            color: #fff;
             padding: 10px 20px;
             font-size: 1rem;
             cursor: pointer;
             border-radius: 10px;
             transition: all 0.3s ease;
-            width: 45%;
         }
         .button:hover {
             background-color: #ff4b5c;
             transform: scale(1.1);
             box-shadow: 0px 8px 15px rgba(255, 75, 92, 0.5);
         }
-        #noButton {
-            position: relative;
-        }
-        .extra-button {
-            display: block;
-            margin-top: 20px;
-            background-color: #87ceeb;
-        }
-        .hidden-button {
+        #message {
             display: none;
-            margin-top: 10px;
-            background-color: #ff6f91;
+            margin-top: 20px;
+            font-size: 1.8rem;
+            color: #28a745;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
         }
-        @media (max-width: 480px) {
+        #tiktok-button, #whatsapp-button, #friend-help-button, #persistence-button {
+            display: none;
+            margin-top: 20px;
+        }
+        .extra-option {
+            margin-top: 20px;
+        }
+        #toggle-whatsapp {
+            background-color: transparent;
+            border: none;
+            font-size: 1.2rem;
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        /* Media queries para smartphones */
+        @media (max-width: 600px) {
             h1 {
-                font-size: 1.5rem;
+                font-size: 6vw;
             }
             .button {
-                font-size: 0.9rem;
+                font-size: 3.5vw;
+                padding: 12px 20px;
+            }
+            #message {
+                font-size: 5vw;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Essa linda moça aceita uma pergunta secreta?</h1>
-        <div class="button-group">
-            <button class="button" id="yesButton">Sim</button>
-            <button class="button" id="noButton">Não</button>
-        </div>
-        <button class="extra-button" id="friendHelpButton">Ajuda de um amigo (caso queira)</button>
-        <button class="extra-button" id="maybeButton">Caso mude de ideia</button>
+
+<div class="container">
+    <h1>ESSA LINDA MOÇA ACEITA UMA PERGUNTA SECRETA?</h1>
+
+    <!-- Caixa para adicionar a imagem -->
+    <div class="image-box">
+        <img src="LELE.JPG.JPEG" alt="Descrição da Imagem">
     </div>
 
-    <script>
-        document.getElementById("noButton").addEventListener("mouseover", function() {
-            const x = Math.floor(Math.random() * 200) - 100;
-            const y = Math.floor(Math.random() * 200) - 100;
-            this.style.transform = `translate(${x}px, ${y}px)`;
-        });
+    <div class="buttons">
+        <button class="button" id="sim">Sim</button>
+        <button class="button" id="nao">Não</button>
+    </div>
+    <div id="message">PARABÉNS, VOCÊ TERÁ O MELHOR ENCONTRO DA SUA VIDA!</div>
+    <a id="tiktok-button" href="https://www.tiktok.com/@patolinoarmando/video/7084737853841804549" target="_blank">
+        <button class="button">Assistir Vídeo</button>
+    </a>
 
-        document.getElementById("yesButton").addEventListener("click", function() {
-            alert("PARABÉNS! VOCÊ TERÁ O MELHOR ENCONTRO DA SUA VIDA!");
-        });
+    <!-- Botão "Ajuda de um amigo" -->
+    <div class="extra-option">
+        <button class="button" id="friend-help">Ajuda de um amigo (caso queira)</button>
+        <a id="friend-help-button" href="https://www.tiktok.com/@fredelboni/video/7161600779759963397" target="_blank">
+            <button class="button" id="toque-aqui-amigo">Toque aqui</button>
+        </a>
+    </div>
 
-        document.getElementById("friendHelpButton").addEventListener("click", function() {
-            window.open("https://www.tiktok.com/@fredelboni/video/7161600779759963397", "_blank");
-        });
+    <!-- Novo botão "Por que você não desiste?" -->
+    <div class="extra-option">
+        <button class="button" id="persistence">Agora você deve estar se perguntando, "mas por que você não desiste nunca e é tão doido?"</button>
+        <a id="persistence-button" href="https://www.tiktok.com/@dunastourx/photo/7403551708191657222" target="_blank">
+            <button class="button" id="toque-aqui-persistence">Toque aqui</button>
+        </a>
+    </div>
 
-        document.getElementById("maybeButton").addEventListener("click", function() {
-            alert("Toque aqui e fale no WhatsApp");
-            window.open("https://wa.me/11966958437?text=oii,%20pensei%20melhor%20kkk", "_blank");
-        });
-    </script>
+    <!-- Opção "Caso mude de ideia" -->
+    <div class="extra-option">
+        <button id="toggle-whatsapp">Caso mude de ideia</button>
+        <a id="whatsapp-button" href="https://api.whatsapp.com/send?phone=SEU_NUMERO_AQUI&text=oii%2C%20pensei%20melhor%20kkk" target="_blank">
+            <button class="button" id="toque-aqui">Toque aqui</button>
+        </a>
+    </div>
+</div>
+
+<script>
+    const btnSim = document.getElementById('sim');
+    const btnNao = document.getElementById('nao');
+    const message = document.getElementById('message');
+    const tiktokButton = document.getElementById('tiktok-button');
+    const toggleWhatsapp = document.getElementById('toggle-whatsapp');
+    const whatsappButton = document.getElementById('whatsapp-button');
+    const friendHelp = document.getElementById('friend-help');
+    const friendHelpButton = document.getElementById('friend-help-button');
+    const persistence = document.getElementById('persistence');
+    const persistenceButton = document.getElementById('persistence-button');
+
+    btnSim.addEventListener('click', () => {
+        message.style.display = 'block';
+        tiktokButton.style.display = 'block'; // Mostra o botão para assistir o vídeo
+    });
+
+    btnNao.addEventListener('mouseover', () => {
+        const x = Math.random() * (window.innerWidth - btnNao.offsetWidth);
+        const y = Math.random() * (window.innerHeight - btnNao.offsetHeight);
+        btnNao.style.position = 'absolute';
+        btnNao.style.left = `${x}px`;
+        btnNao.style.top = `${y}px`;
+    });
+
+    // Mostra o botão do WhatsApp quando "Caso mude de ideia" for clicado
+    toggleWhatsapp.addEventListener('click', () => {
+        whatsappButton.style.display = 'block';
+    });
+
+    // Mostra o botão de "Ajuda de um amigo" ao clicar
+    friendHelp.addEventListener('click', () => {
+        friendHelpButton.style.display = 'block';
+    });
+
+    // Mostra o botão de "Por que você não desiste?" ao clicar
+    persistence.addEventListener('click', () => {
+        persistenceButton.style.display = 'block';
+    });
+</script>
+
 </body>
 </html>
